@@ -15,7 +15,7 @@ role :web, %w{ubuntu@ec2-54-206-22-115.ap-southeast-2.compute.amazonaws.com}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+# server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
@@ -23,8 +23,9 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 # set it globally
  set :ssh_options, {
    keys: %w(/Users/raphael/.ssh/aws),
-   forward_agent: false,
-   auth_methods: %w(publickey)
+   forward_agent: true,
+   auth_methods: %w(publickey),
+   # verbose: :debug
  }
 # and/or per server
 # server 'example.com',
