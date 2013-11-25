@@ -36,10 +36,13 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-gem 'unicorn'
-gem 'rails_12factor', group: :production
+gem 'unicorn',    '~> 4.7.0'
+
+# for heroku
+# gem 'rails_12factor', group: :production
+
 # Use Capistrano for deployment
-gem 'capistrano', '~> 3.0', group: :development
+gem 'capistrano', '~> 3.0.1', group: :development
 gem 'capistrano-rvm', '~> 0.0.3', group: :development
 
 # Use debugger
